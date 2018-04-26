@@ -1977,6 +1977,7 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
 
     tCsrScanResultInfo *pScanResult;
     tSapSpectChInfo *pSpectCh   = pSpectInfoParams->pSpectCh;
+    tSapSpectChInfo *pExtSpectCh = NULL;
     v_U32_t operatingBand = eCSR_DOT11_MODE_11g;
     v_U16_t channelWidth;
     v_U16_t secondaryChannelOffset;
@@ -2104,7 +2105,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
                         case eHT_CHANNEL_WIDTH_80MHZ: // VHT80
                             if((centerFreq - channel_id) == 6)
                             {
-                                tSapSpectChInfo *pExtSpectCh = NULL;
                                 pExtSpectCh = (pSpectCh + 1);
                                 if( pExtSpectCh != NULL &&
                                    (pExtSpectCh >= pSpectChStartAddr &&
@@ -2150,7 +2150,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
                             }
                             else if((centerFreq - channel_id) == 2)
                             {
-                                tSapSpectChInfo *pExtSpectCh = NULL;
                                 pExtSpectCh = (pSpectCh - 1 );
                                 if( pExtSpectCh != NULL &&
                                    (pExtSpectCh >= pSpectChStartAddr &&
@@ -2196,7 +2195,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
                             }
                             else if((centerFreq - channel_id) == -2)
                             {
-                                tSapSpectChInfo *pExtSpectCh = NULL;
                                 pExtSpectCh = (pSpectCh - 1 );
                                 if( pExtSpectCh != NULL &&
                                    (pExtSpectCh >= pSpectChStartAddr &&
@@ -2242,7 +2240,6 @@ void sapComputeSpectWeight( tSapChSelSpectInfo* pSpectInfoParams,
                             }
                             else if((centerFreq - channel_id) == -6)
                             {
-                                tSapSpectChInfo *pExtSpectCh = NULL;
                                 pExtSpectCh = (pSpectCh - 1 );
                                 if( pExtSpectCh != NULL &&
                                    (pExtSpectCh >= pSpectChStartAddr &&
